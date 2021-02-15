@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+background-color: #f0f2f5;
+color: #222;
+font-family: "Poppins";
+text-align: center;
+}
+
+h2 {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.grid-container {
+    display: grid;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    justify-content: center;
+    grid-template: repeat(6, minmax(150px, auto)) / repeat(2, 2fr); /* SET THE MIN HEIGHT FOR ROW IS 150PX, MAX HEIGHT FOR ROW IS AUTO, COLUMNS WIDTH IS ALWAYS 2FR*/
+    grid-template-areas: 
+    "intro intro"
+    ". about-me"
+    "projects ."
+    ". language"
+    "contact ."
+    "footer footer";
+}
+
+/* HIDE THE DARK MODE TEXT NEXT TO THE DARK MODE TOGGLE WHEN SCREEN IS LESS THAN 723PX */
+@media only screen and (max-width: 723px) {
+    .dark-mode-text {
+        display: none;
+    }
+}
+
+/* NAVIGATION */
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo h2 {
+    font-family: Poppins;
+}
+
+nav {
+    font-family: "Ubuntu Mono";
+    width: 400px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+}
+
+
+/* INTRO */
+
+#intro {
+    grid-area: intro;
+    align-self: center;
+}
+
+.gradient-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: black;
+    font-size: 3rem;
+    background-image: linear-gradient(45deg, #3b77ea, #9B42D4);
+    background-size: auto;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#intro h2 {
+    font-family: Poppins;
+    font-weight: normal;
+}
+
+/* ABOUT ME */
+
+#about-me {
+    grid-area: about-me;
+    text-align: left;
+    justify-self: center;
+    padding: 20px 0;
+}
+
+#about-me h2 {
+    margin-bottom: 10px;
+}
+
+/* PROJECTS */
+
+#projects {
+    grid-area: projects;
+    text-align: right;
+    align-self: center;
+    padding: 20px 0;
+}
+
+#projects h2 {
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-family: "Ubuntu Mono";
+}
+
+/* LANGUAGE  */
+
+#language {
+    grid-area: language;
+    text-align: left;
+    align-self: center;
+}
+
+#language h2 {
+    margin-bottom: 10px;
+}
+
+#language img {
+    width: 64px;
+    height: 64px;
+}
+
+/* CONTACT  */
+
+#contact {
+    grid-area: contact;
+    text-align: right;
+    align-self: center;
+}
+
+#contact h2 {
+    margin-bottom: 10px;
+}
+
+#contact img {
+    width: auto;
+    height: 48px;
+}
+
+/* FOOTER */
+
+footer {
+    grid-area: footer;
+    align-self: center;
+}
+
+/* IOS TOGGLE */
+
+.form-switch {
+    display: inline-block;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    margin-top: 10px;
+  }
+  
+  .form-switch i {
+    position: relative;
+    display: inline-block;
+    margin-right: .5rem;
+    width: 46px;
+    height: 26px;
+    background-color: #e6e6e6;
+    border-radius: 23px;
+    vertical-align: text-bottom;
+    transition: all 0.3s linear;
+  }
+  
+  .form-switch i::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 42px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 11px;
+    transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+    transition: all 0.25s linear;
+  }
+  
+  .form-switch i::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+    transform: translate3d(2px, 2px, 0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-switch:active i::after {
+    width: 28px;
+    transform: translate3d(2px, 2px, 0);
+  }
+  
+  .form-switch:active input:checked + i::after { transform: translate3d(16px, 2px, 0); }
+  
+  .form-switch input { display: none; }
+  
+  .form-switch input:checked + i { background-color: #4BD763; }
+  
+  .form-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0); }
+  
+  .form-switch input:checked + i::after { transform: translate3d(22px, 2px, 0); }
+
+  /* BUTTON 1 */
